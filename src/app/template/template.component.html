@@ -1,43 +1,47 @@
 <div class="container">
   <form (ngSubmit)="onSubmit()" #f="ngForm">
     <!-- "onSubmit(f)"" #f="ngForm"-->
-    <p>
-      <mat-form-field appearance="standard">
-        <mat-label>User Name</mat-label>
-        <input
-          matInput
-          ngModel
-          name="name"
-          placeholder="first name last name"
-          required
-        />
-        <mat-icon matSuffix>people</mat-icon>
-        <mat-hint>Required</mat-hint>
-      </mat-form-field>
-    </p>
+    <div class="nameData" ngModelGroup="nameData" #nameDtr>
+      <p>
+        <mat-form-field appearance="standard">
+          <mat-label>User Name</mat-label>
+          <input
+            matInput
+            ngModel
+            name="name"
+            placeholder="first name last name"
+            required
+          />
+          <mat-icon matSuffix>people</mat-icon>
+          <mat-hint>Required</mat-hint>
+        </mat-form-field>
+      </p>
 
-    <button mat-raised-button color="primary">Suggest an User Name</button>
+      <button mat-raised-button color="primary">Suggest an User Name</button>
 
-    <p>
-      <mat-form-field appearance="standard">
-        <mat-label>E-Mail</mat-label>
-        <input
-          matInput
-          ngModel
-          name="mail"
-          placeholder="me@gmail.com"
-          required
-          email
-          #email="ngModel"
-        />
-        <mat-icon matSuffix>mail</mat-icon>
-        <mat-hint>Required</mat-hint>
-      </mat-form-field>
-      <mat-error *ngIf="!email.valid && email.touched"
-        >Must be a valid email</mat-error
-      >
-    </p>
-
+      <p>
+        <mat-form-field appearance="standard">
+          <mat-label>E-Mail</mat-label>
+          <input
+            matInput
+            ngModel
+            name="mail"
+            placeholder="me@gmail.com"
+            required
+            email
+            #email="ngModel"
+          />
+          <mat-icon matSuffix>mail</mat-icon>
+          <mat-hint>Required</mat-hint>
+        </mat-form-field>
+        <mat-error *ngIf="!email.valid && email.touched"
+          >Must be a valid email</mat-error
+        >
+      </p>
+    </div>
+    <mat-error *ngIf="!nameDtr.valid">
+      <span *ngIf="email.touched">You have missing/invalid data </span>
+    </mat-error>
     <p>
       <mat-form-field appearance="fill">
         <mat-label>Secret Question</mat-label>

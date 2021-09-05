@@ -10,3 +10,11 @@
   background-color:yellow;
   opacity: .2;
 }
+
+.nameData.ng-invalid.ng-touched {
+  border-style:solid;
+  border-width: 1px;
+  padding: 8px;
+  border-radius: 5px;
+  border-color: yellowgreen;
+}
