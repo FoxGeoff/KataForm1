@@ -25,3 +25,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 1. Moved flex-layout registration to app.module due to errors
 2. Add Material and Add flex Layout in this order and test at each stage
+3. ADD formsModule to app.module !!!
+
+### Task: Add mat components to form

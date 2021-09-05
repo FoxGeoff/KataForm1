@@ -1,21 +1,36 @@
 <div class="container">
-  <form fxLayout="column" fxLayoutGap="8px" fxLayoutAlign="start">
-    <div>
-      <label>Username</label>
-      <input type="text" />
-    </div>
-    <div>
-      <button>Suggest an Username</button>
-    </div>
-    <div>
-      <label>Mail</label>
-      <input type="email" />
-    </div>
-    <div>
-      <label>Secret Question</label>
-      <input type="text" />
-    </div>
-    <div>
-      <button>Submit</button>
-    </div>
-  </form>
+<form>
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>User Name</mat-label>
+      <input matInput placeholder="first name last name" />
+      <mat-icon matSuffix>people</mat-icon>
+      <mat-hint>Required</mat-hint>
+    </mat-form-field>
+  </p>
+
+  <button mat-raised-button color="primary">Suggest an User Name</button>
+
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>E-Mail</mat-label>
+      <input matInput placeholder="me@gmail.com" />
+      <mat-icon matSuffix>mail</mat-icon>
+      <mat-hint>Required</mat-hint>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Secret Question</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let q of questions" [value]="q">
+          {{ q }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+
+  <button mat-raised-button color="accent">Submit</button>
+</form>
+</div>

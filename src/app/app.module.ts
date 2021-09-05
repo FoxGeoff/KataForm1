@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TemplateComponent } from './template/template.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MaterialModule } from './material.module';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

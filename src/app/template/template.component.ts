@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateComponent implements OnInit {
 
+  questions: string[] = [
+    'What school did you attend',
+    'What is your mothers maiden name'
+  ];
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
