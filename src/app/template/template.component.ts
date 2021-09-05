@@ -1,6 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+interface Secret {
+  ask: string,
+  value: string
+}
 @Component({
   selector: 'app-template',
   templateUrl: './template.component.html',
@@ -8,12 +12,15 @@ import { NgForm } from '@angular/forms';
 })
 export class TemplateComponent implements OnInit {
 
+
+  defaultQuestion ='pet';
+
   // gives continues access to form
   @ViewChild('f') signUpForm: NgForm;
 
-  questions: string[] = [
-    'What school did you attend',
-    'What is your mothers maiden name'
+  questions: Secret[] = [
+    { ask: 'What school did you attend', value: 'school' },
+    { ask: 'What is your mothers maiden name', value: 'pet' }
   ];
 
   constructor() { }
@@ -22,13 +29,13 @@ export class TemplateComponent implements OnInit {
 
   }
 
-/*
-  onSubmit(form: NgForm) {
-    console.log(form);
+  /*
+    onSubmit(form: NgForm) {
+      console.log(form);
+    }
+  */
+  // Alt method using @ViewChild()
+  onSubmit() {
+    console.log(this.signUpForm);
   }
-*/
-// Alt method using @ViewChild()
-onSubmit() {
-  console.log(this.signUpForm);
-}
 }
