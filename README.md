@@ -28,3 +28,5 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 3. ADD formsModule to app.module !!!
 
 ### Task: Add mat components to form
+
+### Task: Add ngModel to form components
