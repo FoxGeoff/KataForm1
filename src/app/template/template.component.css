@@ -5,3 +5,8 @@
   border-style: solid;
   border-width: 1px;
 }
+
+ input.ng-invalid.ng-touched {
+  background-color:yellow;
+  opacity: .2;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,9 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./template.component.css']
 })
 export class TemplateComponent implements OnInit {
+
+  // gives continues access to form
+  @ViewChild('f') signUpForm: NgForm;
 
   questions: string[] = [
     'What school did you attend',
@@ -19,9 +22,13 @@ export class TemplateComponent implements OnInit {
 
   }
 
-
+/*
   onSubmit(form: NgForm) {
     console.log(form);
   }
-
+*/
+// Alt method using @ViewChild()
+onSubmit() {
+  console.log(this.signUpForm);
+}
 }
