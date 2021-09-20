@@ -40,7 +40,7 @@
       </p>
     </div>
     <mat-error *ngIf="!nameDtr.valid">
-      <span *ngIf="email.touched">You have missing/invalid data </span>
+      <span *ngIf="!email.touched">You have missing/invalid data </span>
     </mat-error>
     <p>
       <mat-form-field appearance="fill">

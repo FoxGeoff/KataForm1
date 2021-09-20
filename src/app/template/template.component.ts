@@ -34,6 +34,7 @@ export class TemplateComponent implements OnInit {
       console.log(form);
     }
   */
+ 
   // Alt method using @ViewChild()
   onSubmit() {
     console.log(this.signUpForm);
